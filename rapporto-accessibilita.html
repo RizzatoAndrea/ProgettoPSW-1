@@ -391,10 +391,10 @@
                                 <div class="card">
                                     <div class="card-header">Analisi di contrasto con rapporto 3:1 per testo grande o medio e bold.</div>
                                     <div class="card-block">
-                                    <figure class="figure card-block">
-                                        <img src="/images/contrast-wcag-aa-small.png" class="figure-img img-fluid rounded" alt="immagine dell'analisi del contrasto con rapporto 3:1">
-                                        <figcaption class="figure-caption bg-faded">Analisi del contrasto con rapporto 3:1.</figcaption>
-                                    </figure>
+                                        <figure class="figure card-block">
+                                            <img src="/images/contrast-wcag-aa-small.png" class="figure-img img-fluid rounded" alt="immagine dell'analisi del contrasto con rapporto 3:1">
+                                            <figcaption class="figure-caption bg-faded">Analisi del contrasto con rapporto 3:1.</figcaption>
+                                        </figure>
                                         <p class="card-text">Tutti gli elementi di grande dimensioni rispecchiano un contrasto di 3:1, di conseguenza non ci sono problemi</p>
                                     </div>
                                 </div>
@@ -410,14 +410,43 @@
                             <h6>Analisi</h6>
                             <ul>
                                 <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
-                                <p>Analisi.......</p>
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento i (italic)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;i class="icon-menu"&gt;&lt;/i&gt;"</pre>
+                                    </div>
+                                </div>
+
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento b (bold)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;b&gt;→&lt;/b&gt;</pre>
+                                    </div>
+                                </div>
 
                                 <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
-                                <p>Analisi.......</p>
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento i (italic)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;i class="icon-chat"&gt;&lt;/i&gt;"</pre>
+                                    </div>
+                                </div>
+
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento b (bold)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;b&gt;→&lt;/b&gt;</pre>
+                                    </div>
+                                </div>
 
                             </ul>
                             <h6>Soluzioni</h6>
-                            <h5>Immagini di testo:</h5>
+                            <p>Le soluzioni per entrambe le pagine sono le seguenti:</p>
+                            <ul>
+                                <li>Sostituire gli elementi <code>i</code> con gli elementi <code>em</code>.</li>
+                                <li>Sostituire gli elementi <code>b</code> con gli elementi <code>strong</code>.</li>
+                            </ul>
+                            <h5>1.4.5 Immagini di testo:</h5>
                             <h6>Descrizione</h6>
                             <p>Se le tecnologie utilizzate consentono la gestione della rappresentazione visiva dei contenuti, il testo è utilizzato per veicolare informazioni piuttosto che le immagini di testo, ad eccezione dei seguenti casi:</p>
                             <ul>
@@ -430,13 +459,12 @@
                             <h6>Analisi</h6>
                             <ul>
                                 <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
-                                <p>Analisi.......</p>
+                                <p>Non esistono informazioni rappresentate solamente da immagini quando potrebbero essere rappresentate testualmente. Fatta eccezzione del logo e dei banner pubblicitari.</p>
 
                                 <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
-                                <p>Analisi.......</p>
+                                <p>Non esistono informazioni rappresentate solamente da immagini quando potrebbero essere rappresentate testualmente. Fatta eccezzione del logo e dei banner pubblicitari</p>
 
                             </ul>
-                            <h6>Soluzioni</h6>
 
                             <hr>
                             <!-- ============= USABILITA' ============= -->
