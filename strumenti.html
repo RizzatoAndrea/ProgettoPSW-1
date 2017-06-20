@@ -18,11 +18,11 @@
     <body>
 
         <!-- ============= NAVBAR START ============= -->
-
-        <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <a class="navbar-brand" href="index.html">Progetto PSW</a>
             <div class="collapse navbar-collapse justify-content-md-center" id="navbarCollapse">
                 <ul class="navbar-nav ">
                     <!-- **** Select the active page *** -->
@@ -56,6 +56,42 @@
 
         <!-- ============= JUMBOTRON END ============= -->
 
+        <div class="container">
+
+            <div class="row row-offcanvas row-offcanvas-right">
+
+                <div class="col-12 col-md-9">
+                    <p class="float-right hidden-md-up">
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
+                    </p>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Hello World</h2>
+                            <p>testo random</p>
+                        </div>
+                    </div>
+
+                </div><!--/span-->
+
+                <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                        <a href="#" class="list-group-item">Link</a>
+                    </div>
+                </div><!--/span-->
+            </div><!--/row-->
+
+        </div><!--/.container-->
+
+
         <!-- ============= FOOTER START ============= -->
         <footer class="footer">
             <div class="container">
@@ -71,8 +107,10 @@
 ================================================== -->
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="/js/jquery-3.2.1.slim.min.js"></script>
-        <script src="/js/tether.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <script src="js/tether.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/offcanvas.js"></script>
+
     </body>
 </html>
