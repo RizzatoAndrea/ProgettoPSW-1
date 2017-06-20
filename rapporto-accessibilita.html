@@ -93,10 +93,37 @@
                             <h5>1.1.1 Contenuti non testuali</h5>
                             <h6>Descrizione</h6>
                             <P>Tutti i contenuti non testuali presentati all'utente hanno un'alternativa testuale equivalente che serve allo stesso scopo, ad eccezione delle seguenti situazioni</P>
+                            <ul>
+                                <li><strong>Controlli, input:</strong> Se il contenuto non testuale è un controllo o accetta l'input degli utenti, allora ha un nome che ne descrive la finalità. (Riferirsi alla Linea guida 4.1 per i requisiti supplementari richiesti per controlli e contenuto che accettano l'input da parte dell'utente).</li>
+                                <li><strong>Tipi di media temporizzati:</strong>Se il contenuto non testuale è un tipo di media temporizzato, allora le alternative testuali forniscono almeno una identificazione descrittiva per il contenuto non testuale. (Riferirsi alla Linea guida 1.2 per ulteriori requisiti per i tipi di media).</li>
+                                <li><strong>Test:</strong>Se il contenuto non testuale è un test o un esercizio che potrebbe essere non valido se presentato come testo, allora le alternative testuali forniscono almeno una descrizione identificativa per il contenuto non testuale.</li>
+                                <li><strong>Esperienze sensoriali:</strong>Se il contenuto non testuale ha lo scopo primario di creare una specifica esperienza sensoriale, allora le alternative testuali forniscono almeno una descrizione identificativa per il contenuto non testuale.</li>
+                                <li><strong>CAPTCHA:</strong>Se la finalità del contenuto non testuale è confermare che il contenuto viene utilizzato da una persona e non da un computer, allora verranno fornite alternative testuali che identifichino e descrivano lo scopo del contenuto non testuale, e forme alternative di CAPTCHA utilizzando diverse modalità di output per differenti tipologie di percezioni sensoriali al fine di soddisfare differenti disabilità.</li>
+                                <li><strong>Decorazioni, formattazioni, contenuti invisibili:</strong>Se il contenuto non testuale è puramente decorativo, viene utilizzato solamente per formattazione visuale oppure non viene presentato agli utenti, allora è implementato in modo da poter essere ignorato dalla tecnologia assistiva.</li>
+                            </ul>
                             <h6>Classificazione</h6>
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di verifica accessibilità:</strong> <a href="https://www.achecker.ca/checker/index.php" target="_blank">AChecker</a> impostato sui criteri A, AA.</li>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Sono stati individuati diversi problemi del tipo: <code>"Manca l'alttributo alt all'elemento img"</code>. Di seguito sono riportati alcuni esempi:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;img width="300" height="250" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAA ..."</pre>
+                                        <pre>&lt;img width="230" height="230/" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAA ...</pre>
+                                        <pre>&lt;img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAI ...</pre>
+                                    </div>
+                                </div>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <!-- ** 1.2 ++ -->
                             <h4>1.2 - Tipi di media temporizzati</h4>
@@ -112,6 +139,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.2.2 Sottotitoli (preregistrati)</h5>
                             <h6>Descrizione</h6>
@@ -120,6 +155,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.2.3 Descrizione audio o tipo di media alternativo (preregistrato)</h5>
                             <h6>Descrizione</h6>
@@ -128,6 +171,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.2.4 Sottotitoli (in tempo reale)</h5>
                             <h6>Descrizione</h6>
@@ -136,6 +187,14 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.2.5 Descrizione audio (preregistrata)</h5>
                             <h6>Descrizione</h6>
@@ -144,6 +203,14 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <!-- ** 1.3 ++ -->
                             <h4>1.3 Adattabile</h4>
@@ -155,6 +222,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.3.2 Sequenza significativa</h5>
                             <h6>Descrizione</h6>
@@ -163,6 +238,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.3.3 Caratteristiche sensoriali</h5>
                             <h6>Descrizione</h6>
@@ -171,6 +254,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <!-- ** 1.4 ++ -->
                             <h4>1.4 Distinguibile</h4>
@@ -182,6 +273,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.4.2 Controllo del sonoro</h5>
                             <h6>Descrizione</h6>
@@ -190,6 +289,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.4.3 Contrasto (minimo)</h5>
                             <h6>Descrizione</h6>
@@ -203,6 +310,14 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.4.4 Ridimensionamento del testo</h5>
                             <h6>Descrizione</h6>
@@ -211,6 +326,14 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>1.4.4 Ridimensionamento del testo</h5>
                             <h6>Descrizione</h6>
@@ -223,6 +346,14 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
+                                <p>Analisi.......</p>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
+                                <p>Analisi.......</p>
+
+                            </ul>
                             <h6>Soluzioni</h6>
 
                             <hr>
