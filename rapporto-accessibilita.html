@@ -277,13 +277,13 @@
                                 <p>E' stato individuato almeno un problema del tipo: <span class="text-danger">"Elemento input di tipo testo non ha una label associata"</span>. Di seguito sono riportati alcuni esempi:</p>
                                 <div class="card">
                                     <div class="card-header">Esempio di problema rilevato.</div>
-                                        <figure class="figure card-block">
-                                            <img src="/images/search-noLabel.png" class="figure-img img-fluid rounded" alt="immagine della barra di ricerca con un input text ma senza label">
-                                            <figcaption class="figure-caption bg-faded">Barra di ricerca con un input text ma senza label.</figcaption>
-                                        </figure>
+                                    <figure class="figure card-block">
+                                        <img src="/images/search-noLabel.png" class="figure-img img-fluid rounded" alt="immagine della barra di ricerca con un input text ma senza label">
+                                        <figcaption class="figure-caption bg-faded">Barra di ricerca con un input text ma senza label.</figcaption>
+                                    </figure>
                                 </div>
-                                    <div class="card">
-                                        <div class="card-header">Di seguito il codice del form della barra di ricerca.</div>
+                                <div class="card">
+                                    <div class="card-header">Di seguito il codice del form della barra di ricerca.</div>
                                     <div class="card-block">
                                         <pre><code>&lt;form action="/risultati-di-ricerca/" id="cse-search-box" class="search jgrid" method="get"&gt;<br>&lt;input type="hidden" name="cx" value="002673224793559243781:8d1aivqnhja" /&gt;<br>&lt;input type="hidden" name="cof" value="FORID:11" /&gt;<br>&lt;input type="hidden" name="ie" value="UTF-8" /&gt;<br>&lt;div class="input-wrap"&gt;<br>&lt;input type="text" name="q" id="q" onFocus="this.value = '';" /&gt;<br>&lt;/div&gt;<br>&lt;div class="submit-wrap"&gt;<br>&lt;button class="basicBtn" type="submit">Cerca&lt;/button&gt;<br>&lt;/div&gt;<br>&lt;/form&gt;
                                         </code></pre>
@@ -337,13 +337,12 @@
                             <h6>Analisi</h6>
                             <ul>
                                 <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
-                                <p>Analisi.......</p>
+                                <p>Nessun problema riscontrato.</p>
 
                                 <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
-                                <p>Analisi.......</p>
+                                <p>Nessun problema riscontrato.</p>
 
                             </ul>
-                            <h6>Soluzioni</h6>
                             <h5>1.4.2 Controllo del sonoro</h5>
                             <h6>Descrizione</h6>
                             <p>Se un contenuto audio all'interno di una pagina Web è eseguito automaticamente per più di tre secondi è necessario fornire una funzionalità per metterlo in pausa o interromperlo, oppure si deve fornire una modalità per il controllo dell'audio che sia indipendente dal controllo predefinito del sistema.</p>
@@ -353,13 +352,12 @@
                             <h6>Analisi</h6>
                             <ul>
                                 <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
-                                <p>Analisi.......</p>
+                                <p>Nessun problema riscontrato.</p>
 
                                 <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
-                                <p>Analisi.......</p>
+                                <p>Nessun problema riscontrato.</p>
 
                             </ul>
-                            <h6>Soluzioni</h6>
                             <h5>1.4.3 Contrasto (minimo)</h5>
                             <h6>Descrizione</h6>
                             <p>La rappresentazione visiva del testo e di immagini contenenti testo ha un rapporto di contrasto di almeno 4.5:1, fatta eccezione per i seguenti casi:</p>
@@ -371,16 +369,38 @@
                             <h6>Classificazione</h6>
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di rilevamento automatico del contrasto:</strong> estensione di Google Chrome "Color Contrast Analyzer" impostato sui parametri del WCAG 2.0</li>
+                                <li><strong>Tool di rilevamento automatico del contrasto:</strong> estensione di Google Chrome "WCAG Luminosity Contrast Ratio Analyzer"</li>
+                            </ul>
                             <h6>Analisi</h6>
                             <ul>
                                 <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a></li>
-                                <p>Analisi.......</p>
+                                <p>E' stato analizzato il contrasto sia per un rapporto di 4.5:1 sia per un rapporto di 3:1. Di seguito i risultati con le maschere di edge.</p>
+                                <div class="card">
+                                    <div class="card-header">Analisi di contrasto con rapporto 4.5:1 per testo piccolo e non bold.</div>
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="/images/contrast-wcag-aa-small.png" class="figure-img img-fluid rounded" alt="immagine dell'analisi del contrasto con rapporto 4.5:1">
+                                            <figcaption class="figure-caption bg-faded">Analisi del contrasto con rapporto 4.5:1.</figcaption>
+                                        </figure>
+                                        <p class="card-text">Solo gli elementi della UI a testo bianco su sfondo rosso non raggiungono un contrasto di 4.5:1 ma sono elementi piùttosto grandi di conseguenza fanno parte delle eccezioni.</p>
+                                    </div>
+                                </div>
 
+                                <div class="card">
+                                    <div class="card-header">Analisi di contrasto con rapporto 3:1 per testo grande o medio e bold.</div>
+                                    <div class="card-block">
+                                    <figure class="figure card-block">
+                                        <img src="/images/contrast-wcag-aa-small.png" class="figure-img img-fluid rounded" alt="immagine dell'analisi del contrasto con rapporto 3:1">
+                                        <figcaption class="figure-caption bg-faded">Analisi del contrasto con rapporto 3:1.</figcaption>
+                                    </figure>
+                                        <p class="card-text">Tutti gli elementi di grande dimensioni rispecchiano un contrasto di 3:1, di conseguenza non ci sono problemi</p>
+                                    </div>
+                                </div>
                                 <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a></li>
-                                <p>Analisi.......</p>
-
+                                <p>L'analisi della pagina "Home" vale anche per questa pagina, poichè vengo unsate le stesse formattazioni e gli stessi colori per i font.</p>
                             </ul>
-                            <h6>Soluzioni</h6>
                             <h5>1.4.4 Ridimensionamento del testo</h5>
                             <h6>Descrizione</h6>
                             <p>Il testo, ad eccezione dei sottotitoli e delle immagini contenenti testo, può essere ridimensionato fino al 200 percento senza l'ausilio di tecnologie assistive e senza perdita di contenuto e funzionalità.</p>
@@ -397,7 +417,7 @@
 
                             </ul>
                             <h6>Soluzioni</h6>
-                            <h5>1.4.4 Ridimensionamento del testo</h5>
+                            <h5>Immagini di testo:</h5>
                             <h6>Descrizione</h6>
                             <p>Se le tecnologie utilizzate consentono la gestione della rappresentazione visiva dei contenuti, il testo è utilizzato per veicolare informazioni piuttosto che le immagini di testo, ad eccezione dei seguenti casi:</p>
                             <ul>
