@@ -698,8 +698,7 @@ e.preventDefault();
                                 <p>Se vengono utilizzati degli <code>header</code>, gli <code>header</code> seguenti devono essere dello stesso livello o di livello inferiore.</p>
                                 <div class="card">
                                     <div class="card-block">
-                                        <pre class="bg-danger">&lt;h2&gt;&lt;h1&gt;...&lt;/h1&gt;/h2&gt;</pre>
-                                        <pre class="bg-success">&lt;h2&gt;&lt;h3&gt;...&lt;/h3&gt;/h2&gt;</pre>
+                                        <pre>&lt;h2&gt;&lt;h1&gt;...&lt;/h1&gt;/h2&gt;</pre>
                                     </div>
                                 </div>
                                 </li>
@@ -707,11 +706,18 @@ e.preventDefault();
                                 <p>Gli <code>header</code> devono essere utilizzati per formattare il testo.</p>                                          
                                 <div class="card">
                                     <div class="card-block">
-                                        <pre class="bg-danger">&lt;h2 class="title-category"&gt;&lt;a href ="http://www.ilfattoquotidiano.it/2017/06/20/corea-del-nord-morto ...</pre>
+                                        <pre>&lt;h2 class="title-category"&gt;&lt;a href ="http://www.ilfattoquotidiano.it/2017/06/20/corea-del-nord-morto ...</pre>
                                     </div>
                                 </div>
                                 </li>
                             </ul> 
+                            <h6>Soluzioni</h6>
+                            <p>Si dovrebbero utilizzare gli <code>header</code> in ordine di importanza, come segue:</p>
+                            <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;h2&gt;&lt;h3&gt;...&lt;/h3&gt;/h2&gt;</pre>
+                                    </div>
+                                </div>                                        
                             <h5>2.4.7 Focus visibile</h5>
                             <h6>Descrizione</h6>
                             <p>Qualsiasi interfaccia utente utilizzabile tramite tastiera ha una funzionalità operativa in cui è visibile l'indicatore del focus.</p>
