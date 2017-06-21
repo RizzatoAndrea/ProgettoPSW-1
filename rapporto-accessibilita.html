@@ -19,7 +19,7 @@
 
         <!-- ============= NAVBAR START ============= -->
 
-        <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -95,129 +95,663 @@
                             <h3 id="percettibilita">1 - Percettibilità</h3>
                             <p>Le informazioni e i componenti dell'interfaccia utente devono essere presentati agli utenti in modo che possano essere percepiti.</p>
                             <!-- ** 1.1 ++ -->
-                            <h4>1.1 - Separazione in livelli di interesse</h4>
+                            <h4>1.1 - Alternative testuali</h4>
                             <p>Fornire alternative testuali per qualsiasi contenuto non di testo in modo che questo possa essere trasformato in altre forme fruibili secondo le necessità degli utenti come stampa a caratteri ingranditi, Braille, sintesi vocale, simboli o un linguaggio più semplice.</p>
                             <h5>1.1.1 Contenuti non testuali</h5>
                             <h6>Descrizione</h6>
                             <p>Tutti i contenuti non testuali presentati all'utente hanno un'alternativa testuale equivalente che serve allo stesso scopo, ad eccezione delle seguenti situazioni</p>
+                            <ul>
+                                <li><strong>Controlli, input:</strong> Se il contenuto non testuale è un controllo o accetta l'input degli utenti, allora ha un nome che ne descrive la finalità. (Riferirsi alla Linea guida 4.1 per i requisiti supplementari richiesti per controlli e contenuto che accettano l'input da parte dell'utente).</li>
+                                <li><strong>Tipi di media temporizzati:</strong> Se il contenuto non testuale è un tipo di media temporizzato, allora le alternative testuali forniscono almeno una identificazione descrittiva per il contenuto non testuale. (Riferirsi alla Linea guida 1.2 per ulteriori requisiti per i tipi di media).</li>
+                                <li><strong>Test:</strong> Se il contenuto non testuale è un test o un esercizio che potrebbe essere non valido se presentato come testo, allora le alternative testuali forniscono almeno una descrizione identificativa per il contenuto non testuale.</li>
+                                <li><strong>Esperienze sensoriali:</strong> Se il contenuto non testuale ha lo scopo primario di creare una specifica esperienza sensoriale, allora le alternative testuali forniscono almeno una descrizione identificativa per il contenuto non testuale.</li>
+                                <li><strong>CAPTCHA:</strong> Se la finalità del contenuto non testuale è confermare che il contenuto viene utilizzato da una persona e non da un computer, allora verranno fornite alternative testuali che identifichino e descrivano lo scopo del contenuto non testuale, e forme alternative di CAPTCHA utilizzando diverse modalità di output per differenti tipologie di percezioni sensoriali al fine di soddisfare differenti disabilità.</li>
+                                <li><strong>Decorazioni, formattazioni, contenuti invisibili:</strong> Se il contenuto non testuale è puramente decorativo, viene utilizzato solamente per formattazione visuale oppure non viene presentato agli utenti, allora è implementato in modo da poter essere ignorato dalla tecnologia assistiva.</li>
+                            </ul>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di verifica accessibilità:</strong> <a href="https://www.achecker.ca/checker/index.php" target="_blank">AChecker</a> impostato sui criteri A, AA.</li>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                    <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"Manca l'alttributo alt all'elemento img"</span>. Di seguito sono riportati alcuni esempi:</p>
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <pre>&lt;img width="300" height="250" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAA ..."</pre>
+                                            <pre>&lt;img width="230" height="230/" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAA ..."</pre>
+                                            <pre>&lt;img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAI ..."</pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Sono stati individuati molti problemi del tipo: <span class="text-danger">"Immagine usata come ancora non ha un attributo alt valido"</span>. Di seguito sono riportati alcuni esempi:</p>
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <pre>&lt;img src="http://st.ilfattoquotidiano.it/wp-content/themes/ifq/assets/img/logo-header-navbar.png" al ..."</pre>
+                                            <pre>&lt;img src="//rd.himediads.com/fr/ad/ilfattoquotidiano.it/homepage;sz=1x1;tile=1;ord=?" width="1" heig ..."</pre>
+                                            <pre>&lt;img src="//rd.himediads.com/fr/ad/ilfattoquotidiano.it/homepage;sz=728x90;tile=1;ord=?" width="728" ..."</pre>
+                                        </div>
+                                    </div>
+
+                                </li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                    <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"Manca l'alttributo alt all'elemento img"</span>. Di seguito sono riportati alcuni esempi:</p>
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <pre>&lt;img src="http://st.ilfattoquotidiano.it/wp-content/themes/ifq/assets/img/logo-header-navbar.png" al ..."</pre>
+                                            <pre>&lt;img src="//rd.himediads.com/fr/ad/ilfattoquotidiano.it/news;sz=1x1;tile=1;ord=?" width="1" height=" ..."</pre>
+                                            <pre>&lt;img src="//rd.himediads.com/fr/ad/ilfattoquotidiano.it/news;sz=728x90;tile=1;ord=?" width="728" hei ..."</pre>
+                                        </div>
+                                    </div>
+
+                                    <p>Sono stati individuati molti problemi del tipo: <span class="text-danger">"Immagine usata come ancora non ha un attributo alt valido"</span>. Di seguito sono riportati alcuni esempi:</p>
+                                    <div class="card">
+                                        <div class="card-block">
+                                            <pre>&lt;img src="http://st.ilfattoquotidiano.it/wp-content/themes/ifq/assets/img/logo-header-navbar.png" al ..."</pre>
+                                            <pre>&lt;img src="//rd.himediads.com/fr/ad/ilfattoquotidiano.it/homepage;sz=1x1;tile=1;ord=?" width="1" heig ..."</pre>
+                                            <pre>&lt;img width="675" height="275" src="https://st.ilfattoquotidiano.it/wp-content/uploads/2017/06/warmbi ..."</pre>
+                                        </div>
+                                    </div>
+
+                                </li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Le soluzioni per entrambe le pagine prese in esame sono le stesse:</p>
+                            <ul>
+                                <li>Aggiungere un attributo <code>alt</code> ad ogni elemento <code>img</code>.</li>
+                                <li>Aggiungere un attributo <code>alt</code> valido ad ogni elemento <code>img</code> uato come ancora.</li>
+                            </ul>
+
+
+                            <!-- ** 1.2 ++ -->
+                            <h4>1.2 - Tipi di media temporizzati</h4>
+                            <p>Fornire alternative per i tipi di media temporizzati</p>
+                            <h5>1.2.1 Solo audio e solo video (preregistrati)</h5>
+                            <h6>Descrizione</h6>
+                            <p>Per i tipi di media preregistrati di solo audio e di solo video, a meno che questi non costituiscano un tipo di media alternativo ad un contenuto testuale chiaramente etichettato come tale, vengono soddisfatti i seguenti punti:</p>
+                            <ul>
+                                <li><strong>Solo audio preregistrato:</strong> È fornita un'alternativa per il tipo di media temporizzato che presenti informazioni equivalenti per il contenuto di solo audio preregistrato.</li>
+                                <li><strong>Solo video preregistrato:</strong> È fornita un'alternativa per il tipo di media temporizzato oppure una traccia audio che presenti informazioni equivalenti per il contenuto di solo video preregistrato.</li>
+                            </ul>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nella pagina non sono presenti media di tipo audio o video.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nella pagina non sono presenti media di tipo audio o video.</p></li>
+                            </ul>
+                            <h5>1.2.2 Sottotitoli (preregistrati)</h5>
+                            <h6>Descrizione</h6>
+                            <p>Per tutti i contenuti audio presenti in tipi di media preregistrati sono forniti sottotitoli sotto forma di tipi di media sincronizzati, eccetto quando tali tipi di media sono l'alternativa di testi e sono chiaramente etichettati come tali.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nella pagina non sono presenti media di tipo audio.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nella pagina non sono presenti media di tipo audio.</p></li>
+                            </ul>
+                            <h5>1.2.3 Descrizione audio o tipo di media alternativo (preregistrato)</h5>
+                            <h6>Descrizione</h6>
+                            <p>Un'alternativa per i tipi di media temporizzati oppure una descrizione audio per i contenuti video preregistrati sono forniti per i tipi di media sincronizzati, eccetto quando il tipo di media è un tipo di media alternativo ad un contenuto testuale ed è chiaramente etichettato come tale.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nella pagina non sono presenti media di tipo audio o alternativi ad eccezione delle immagini, già analizzate nel punto 1.1.1.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a><p>Nella pagina non sono presenti media di tipo audio o alternativi ad eccezione delle immagini, già analizzate nel punto 1.1.1.</p></li>
+
+                            </ul>
+                            <h5>1.2.4 Sottotitoli (in tempo reale)</h5>
+                            <h6>Descrizione</h6>
+                            <p>I sottotitoli sono forniti per tutti i contenuti audio in tempo reale sotto forma di tipi di media sincronizzati.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nella pagina non sono presenti media di tipo audio.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nella pagina non sono presenti media di tipo audio.</p></li>
+
+                            </ul>
+                            <h5>1.2.5 Descrizione audio (preregistrata)</h5>
+                            <h6>Descrizione</h6>
+                            <p>Una descrizione audio è fornita per tutti i contenuti video preregistrati sotto forma di tipi di media sincronizzati.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nella pagina non sono presenti media di tipo video.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nella pagina non sono presenti media di tipo video.</p></li>
+
+                            </ul>
+                            <!-- ** 1.3 ++ -->
+                            <h4>1.3 Adattabile</h4>
+                            <p>Creare contenuti che possano essere rappresentati in modalità differenti (ad esempio, con layout più semplici), senza perdere informazioni o la struttura.</p>
+                            <h5>1.3.1 Informazioni e correlazioni</h5>
+                            <h6>Descrizione</h6>
+                            <p>Le informazioni, la struttura e le correlazioni trasmesse dalla presentazione possono essere determinate programmaticamente oppure sono disponibili tramite testo.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di verifica accessibilità:</strong> <a href="https://www.achecker.ca/checker/index.php" target="_blank">AChecker</a> impostato sui criteri A, AA.</li>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>E' stato individuato almeno un problema del tipo: <span class="text-danger">"Elemento input di tipo testo non ha una label associata"</span>. Di seguito sono riportati alcuni esempi:</p>
+                                <div class="card">
+                                    <div class="card-header">Esempio di problema rilevato.</div>
+                                    <figure class="figure card-block">
+                                        <img src="images/search-noLabel.png" class="figure-img img-fluid rounded" alt="immagine della barra di ricerca con un input text ma senza label">
+                                        <figcaption class="figure-caption bg-faded">Barra di ricerca con un input text ma senza label.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">Di seguito il codice del form della barra di ricerca.</div>
+                                    <div class="card-block">
+                                        <pre><code>&lt;form action="/risultati-di-ricerca/" id="cse-search-box" class="search jgrid" method="get"&gt;<br>&lt;input type="hidden" name="cx" value="002673224793559243781:8d1aivqnhja" /&gt;<br>&lt;input type="hidden" name="cof" value="FORID:11" /&gt;<br>&lt;input type="hidden" name="ie" value="UTF-8" /&gt;<br>&lt;div class="input-wrap"&gt;<br>&lt;input type="text" name="q" id="q" onFocus="this.value = '';" /&gt;<br>&lt;/div&gt;<br>&lt;div class="submit-wrap"&gt;<br>&lt;button class="basicBtn" type="submit">Cerca&lt;/button&gt;<br>&lt;/div&gt;<br>&lt;/form&gt;
+                                        </code></pre>
+                                        <p class="card-text">Manca l'elemento label associato all'elemento input.</p>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a><p>Poichè la barra di ricerca è posizionata nella navbar del sito, si presume sia presente in tutte le pagine del sito, questa compresa.</p></li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Per ogni elemento di tipo <code>input</code> si deve creare un <code>label</code> per associarci un significato. Impostare l'attributo <code>for</code> del <code>label</code> con lo stesso valore del'attributo <code>id</code> del controllo. Altrimenti creare un elemento <code>label</code> che contenga l'elemento di <code>input</code>.</p>
+                            <h5>1.3.2 Sequenza significativa</h5>
+                            <h6>Descrizione</h6>
+                            <p>Quando la sequenza in cui il contenuto è presentato influisce sul suo significato, la corretta sequenza di lettura può essere determinata programmaticamente.</p>
                             <h6>Classificazione</h6>
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <!-- ** 1.2 ++ -->
-                            <h4>1.2 - Alternative di presentazione senza perdita</h4>
-                            <h5>1.2.1 Solo audio e solo video (preregistrati)</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <h5>1.2.2 Sottotitoli (preregistrati)</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <h5>1.2.3 Descrizione audio o tipo di media alternativo (preregistrato)</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <h5>1.2.4 Sottotitoli (in tempo reale)</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <h5>1.2.5 Descrizione audio (preregistrata)</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <!-- ** 1.3 ++ -->
-                            <h4>1.3 - Alternative per media temporizzati</h4>
-                            <h5>1.3.1 Informazioni e correlazioni</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
-                            <h5>1.3.2 Sequenza significativa</h5>
-                            <h6>Descrizione</h6>
-                            <h6>Classificazione</h6>
-                            <h6>Strumenti usati</h6>
-                            <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
                             <h5>1.3.3 Caratteristiche sensoriali</h5>
                             <h6>Descrizione</h6>
+                            <p>Le istruzioni fornite per comprendere ed operare sui contenuti non devono basarsi unicamente su caratteristiche sensoriali dei componenti quali forma, dimensione, ubicazione visiva, orientamento o il suono.</p>
                             <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
                             <!-- ** 1.4 ++ -->
-                            <h4>1.4 - Alternative testuali per contenuti non testuali</h4>
+                            <h4>1.4 Distinguibile</h4>
+                            <p>Rendere più semplice agli utenti la visione e l'ascolto dei contenuti, separando i contenuti in primo piano dallo sfondo</p>
                             <h5>1.4.1 Uso del colore</h5>
                             <h6>Descrizione</h6>
+                            <p>Il colore non deve essere utilizzato come unica modalità visiva per rappresentare informazioni, indicare azioni, richiedere risposte o come elemento di distinzione visiva. </p>
                             <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
                             <h5>1.4.2 Controllo del sonoro</h5>
                             <h6>Descrizione</h6>
+                            <p>Se un contenuto audio all'interno di una pagina Web è eseguito automaticamente per più di tre secondi è necessario fornire una funzionalità per metterlo in pausa o interromperlo, oppure si deve fornire una modalità per il controllo dell'audio che sia indipendente dal controllo predefinito del sistema.</p>
                             <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
                             <h5>1.4.3 Contrasto (minimo)</h5>
                             <h6>Descrizione</h6>
+                            <p>La rappresentazione visiva del testo e di immagini contenenti testo ha un rapporto di contrasto di almeno 4.5:1, fatta eccezione per i seguenti casi:</p>
+                            <ul>
+                                <li><strong>Testo grande:</strong> Testo grande e immagini contenenti testo grande devono avere un rapporto di contrasto di almeno 3:1;</li>
+                                <li><strong>Testo non essenziale:</strong> Testo o immagini contenenti testo che sono parti inattive di componenti dell'interfaccia utente, che sono di pura decorazione, non visibili a nessuno, oppure che fanno parte di immagini contenenti contenuti visuali maggiormente significativi, non hanno alcun requisito di contrasto.</li>
+                                <li><strong>Logotipi:</strong> Un testo che è parte di un logo o marchio non ha alcun requisito minimo di contrasto.</li>
+                            </ul>
                             <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di rilevamento automatico del contrasto:</strong> estensione di Google Chrome "Color Contrast Analyzer" impostato sui parametri del WCAG 2.0</li>
+                                <li><strong>Tool di rilevamento automatico del contrasto:</strong> estensione di Google Chrome "WCAG Luminosity Contrast Ratio Analyzer"</li>
+                            </ul>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>E' stato analizzato il contrasto sia per un rapporto di 4.5:1 sia per un rapporto di 3:1. Di seguito i risultati con le maschere di edge.</p>
+                                <div class="card">
+                                <div class="card-header">Analisi di contrasto con rapporto 4.5:1 per testo piccolo e non bold.</div>
+                                <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/contrast-wcag-aa-small.png" class="figure-img img-fluid rounded" alt="immagine dell'analisi del contrasto con rapporto 4.5:1">
+                                            <figcaption class="figure-caption bg-faded">Analisi del contrasto con rapporto 4.5:1.</figcaption>
+                                        </figure>
+                                        <p class="card-text">Solo gli elementi della UI a testo bianco su sfondo rosso non raggiungono un contrasto di 4.5:1 ma sono elementi piùttosto grandi di conseguenza fanno parte delle eccezioni.</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">Analisi di contrasto con rapporto 3:1 per testo grande o medio e bold.</div>
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/contrast-wcag-aa-small.png" class="figure-img img-fluid rounded" alt="immagine dell'analisi del contrasto con rapporto 3:1">
+                                            <figcaption class="figure-caption bg-faded">Analisi del contrasto con rapporto 3:1.</figcaption>
+                                        </figure>
+                                        <p class="card-text">Tutti gli elementi di grande dimensioni rispecchiano un contrasto di 3:1, di conseguenza non ci sono problemi</p>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>L'analisi della pagina "Home" vale anche per questa pagina, poichè vengo unsate le stesse formattazioni e gli stessi colori per i font.</p></li>
+                            </ul>
                             <h5>1.4.4 Ridimensionamento del testo</h5>
                             <h6>Descrizione</h6>
+                            <p>Il testo, ad eccezione dei sottotitoli e delle immagini contenenti testo, può essere ridimensionato fino al 200 percento senza l'ausilio di tecnologie assistive e senza perdita di contenuto e funzionalità.</p>
                             <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento i (italic)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;i class="icon-menu"&gt;&lt;/i&gt;"</pre>
+                                    </div>
+                                </div>
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento b (bold)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;b&gt;→&lt;/b&gt;</pre>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento i (italic)"</span>. Di seguito è riportato un esempio:</p>
+
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;i class="icon-chat"&gt;&lt;/i&gt;"</pre>
+                                    </div>
+                                </div>
+                                <p>Sono stati individuati diversi problemi del tipo: <span class="text-danger">"E' stato usato l'elemento b (bold)"</span>. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;b&gt;→&lt;/b&gt;</pre>
+                                    </div>
+                                </div>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
-                            <h5>1.4.4 Ridimensionamento del testo</h5>
+                            <p>Le soluzioni per entrambe le pagine sono le seguenti:</p>
+                            <ul>
+                                <li>Sostituire gli elementi <code>i</code> con gli elementi <code>em</code>.</li>
+                                <li>Sostituire gli elementi <code>b</code> con gli elementi <code>strong</code>.</li>
+                            </ul>
+                            <h5>1.4.5 Immagini di testo:</h5>
                             <h6>Descrizione</h6>
+                            <p>Se le tecnologie utilizzate consentono la gestione della rappresentazione visiva dei contenuti, il testo è utilizzato per veicolare informazioni piuttosto che le immagini di testo, ad eccezione dei seguenti casi:</p>
+                            <ul>
+                                <li><strong>Personalizzabile:</strong> L'immagine di testo può essere personalizzata visivamente per le esigenze dell'utente;</li>
+                                <li><strong>Essenziale:</strong> Una particolare rappresentazione del testo è essenziale per il tipo di informazioni veicolate.</li>
+                            </ul>
                             <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Non esistono informazioni rappresentate solamente da immagini quando potrebbero essere rappresentate testualmente. Fatta eccezzione del logo e dei banner pubblicitari.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Non esistono informazioni rappresentate solamente da immagini quando potrebbero essere rappresentate testualmente. Fatta eccezzione del logo e dei banner pubblicitari</p></li>
+                            </ul>
 
                             <hr>
                             <!-- ============= USABILITA' ============= -->
 
                             <h3 id="usabilita">2 - Usabilità</h3>
+                            <p>I componenti e la navigazione dell'interfaccia utente devono essere utilizzabili</p>
+                            <!-- ** 2.1 ++ -->
                             <h4>2.1 - Usabilità con tastiera</h4>
-                            <h5>Descrizione</h5>
-                            <h5>Classificazione</h5>
-                            <h5>Strumenti usati</h5>
-                            <h5>Analisi</h5>
-                            <h5>Soluzioni</h5>
+                            <p>Accessibile da tastiera: rendere disponibili tutte le funzionalità tramite tastiera.</p>
+                            <h5>2.1.1 Tastiera</h5>
+                            <h6>Descrizione</h6>
+                            <p>Tutte le funzionalità del contenuto sono utilizzabili tramite un'interfaccia di tastiera senza richiedere tempi specifici per le singole battiture, salvo il caso in cui sia la funzionalità di fondo a richiedere un input che dipende dal percorso del movimento dell'utente e non solo dai suoi punti d'arrivo.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Alcune funzioni all'interno del sito sono utilizzabili solo tramite l'ausilio del mouse, facendo in modo che persone con scarsa visibilità o con tremori non rieascano ad averne pieno controllo. Di seguito è riportato un esempio:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>$toggleBtn.on('click', function(e){
+var $siteWrapper= $('.main-wrap');
+var offset = 350;
+var minOffseta = 80;
+var className='open';
+$(this).toggleClass(className);
+// animate site content
+var left = offset-$siteWrapper[0].getBoundingClientRect().left;
+if($siteWrapper.hasClass(className)){
+    $siteWrapper[0].style.transform= 'translateX(0)';
+// re-enable hidden submenu ilfattoquotidiano.it
+$('.top-bar-menu-fatto-content').attr('style', '');
+}else if(left>0){
+    $siteWrapper[0].style.transform= 'translateX('+left+'px)';
+// hide submenu ilfattoquotidiano.it
+$('.top-bar-menu-fatto-content').css('display', 'none');
+}
+$animatable.each(function(){
+    var $this = $(this);
+    $this.hasClass(className) ? $this.removeClass(className): $this.addClass(className);
+});
+e.preventDefault();
+})</pre>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>La pagina presenta lo stesso problema della homepage visto sopra.</p></li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Aggiungere la possibilità di usurfruire di queste funzioni tramite l'evento <code>keydown()</code>.</p>
+                            <h5>2.1.2 Nessun impedimento all'uso della tastiera</h5>
+                            <h6>Descrizione</h6>
+                            <p>Se il focus può essere portato tramite interfaccia di tastiera su un componente della pagina, deve anche poter essere spostato dallo stesso componente sempre tramite interfaccia di tastiera e, se a tal fine non fosse sufficiente l'uso dei normali tasti freccia o tab o l'uso di altri metodi di uscita standard, l'utente deve essere informato sul metodo per rilasciare il focus.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
+                            <!-- ** 2.2 ++ -->
                             <h4>2.2 - Tempo minimo di comprensione</h4>
-                            <h5>Descrizione</h5>
-                            <h5>Classificazione</h5>
-                            <h5>Strumenti usati</h5>
-                            <h5>Analisi</h5>
-                            <h5>Soluzioni</h5>
+                            <p>Adeguata disponibilità di tempo: Fornire agli utenti tempo sufficiente per leggere ed utilizzare i contenuti.</p>
+                            <h5>2.2.1 Regolazione tempi di esecuzione</h5>
+                            <h6>Descrizione</h6>
+                            <p>Per ogni temporizzazione presente nel contenuto, è soddisfatto almeno uno dei seguenti casi:</p>
+                            <ul>
+                                <li><strong>Spegnimento:</strong> All'utente è consentito arrestare il limite di tempo prima di raggiungerlo;</li>
+                                <li><strong>Regolazione:</strong> All'utente è consentito regolare il limite di tempo prima di raggiungerlo in un'ampia gamma che sia almeno dieci volte superiore alla durata dell'impostazione predefinita;</li>
+                                <li><strong>Estensione:</strong> L'utente è avvisato prima dello scadere del tempo; gli sono dati almeno 20 secondi per estendere il limite tramite un'azione semplice (per esempio: "premere la barra spaziatrice") e gli è consentito di estendere il limite per almeno 10 volte;</li>
+                                <li><strong>Eccezione per eventi in tempo reale:</strong> Il limite di tempo è un elemento fondamentale di un evento in tempo reale (ad esempio, un'asta on line), e non è possibile eliminare questo vincolo;</li>
+                                <li><strong>Eccezione di essenzialità:</strong> Il limite di tempo è essenziale per l'attività (ad esempio: una verifica a tempo) ed estenderlo l'invaliderebbe;</li>
+                                <li><strong>Eccezione delle 20 ore:</strong> Il limite di tempo è superiore a 20 ore.</li>
+                            </ul>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>È stato riscontrato che la pagina fa utilizzo di un meta-tag <code>http-equiv</code> per l'auto aggiornamento, ogni 600 secondi.</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;meta http-equiv="Refresh" content="600; URL=http://www.ilfattoquotidiano.it?refresh_ce"&gt;</pre>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Rimuovere il metatag <code>http-equiv</code> o sostituire l'attributo <code>content</code> con <code>content=0</code>.
+                            Oppure permettere all'utente, tramite un tool nella pagina, di modificare il tempo di aggiornamento o bloccarlo.</p>
+                            <h5>2.2.2 Pausa, stop, nascondi</h5>
+                            <h6>Descrizione</h6>
+                            <p>Nei casi di animazioni, lampeggiamenti, scorrimenti o auto-aggiornamenti di informazioni, sono soddisfatti tutti i seguenti punti:</p>
+                            <ul>
+                                <li><strong>Spostamento, lampeggiamento, scorrimento:</strong> Per qualsiasi movimento, lampeggiamento o scorrimento di informazioni che (1) si avvia automaticamente, (2) dura più di cinque secondi ed (3) è presentato in parallelo con altro contenuto, è presente un meccanismo per metterlo in pausa, interromperlo o nasconderlo, a meno che il movimento, il lampeggiamento o lo scorrimento siano parte essenziale dell'attività;</li>
+                                <li><strong>Auto-aggiornamento:</strong> Per qualsiasi auto-aggiornamento di informazioni che (1) si avvia automaticamente ed (2) è presentato in parallelo con altro contenuto, è presente un meccanismo per metterlo in pausa, interromperlo o nasconderlo o per controllare la frequenza dell'aggiornamento a meno che l'auto-aggiornamento sia parte essenziale dell'attività.</li>
+                            </ul>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
+                            <!-- ** 2.3 ++ -->
                             <h4>2.3 - Controllo anti crisi epilettica</h4>
-                            <h5>Descrizione</h5>
-                            <h5>Classificazione</h5>
-                            <h5>Strumenti usati</h5>
-                            <h5>Analisi</h5>
-                            <h5>Soluzioni</h5>
+                            <p>Non sviluppare contenuti che possano causare attacchi epilettici.</p>
+                            <h5>2.3.1 Tre lampeggiamenti o inferiore alla soglia</h5>
+                            <h6>Descrizione</h6>
+                            <p>Le pagine Web non devono contenere nulla che lampeggi per più di tre volte al secondo oppure il lampeggiamento è al di sotto della soglia generale di lampeggiamento e della soglia del lampeggiamento rosso.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
+                            <!-- ** 2.4 ++ -->
                             <h4>2.4 - Supporto alla navigazione</h4>
-                            <h5>Descrizione</h5>
-                            <h5>Classificazione</h5>
-                            <h5>Strumenti usati</h5>
-                            <h5>Analisi</h5>
-                            <h5>Soluzioni</h5>
+                            <p>Fornire delle funzionalità di supporto all'utente per navigare, trovare contenuti e determinare la propria posizione.</p>
+                            <h5>2.4.1 Salto di blocchi</h5>
+                            <h6>Descrizione</h6>
+                            <p>Fornire una modalità per saltare i blocchi di contenuto che si ripetono su più pagine Web.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>La pagina non presenta link per raggiungere il contenuto principale e link di inizio e fine blocco.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>La pagina non presenta link per raggiungere il contenuto principale e link di inizio e fine blocco.</p></li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Aggiungere dei link di navigazione per permettere all'utente di raggiungere ogni parte della pagina in modo veloce e efficace.</p>
+                            <h5>2.4.2 Titolazione della pagina</h5>
+                            <h6>Descrizione</h6>
+                            <p>Le pagine Web hanno titoli che ne descrivono l'argomento o la finalità.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
+                            <h5>2.4.3 Ordine del focus</h5>
+                            <h6>Descrizione</h6>
+                            <p>Se una pagina Web può essere navigata in modo sequenzialee le sequenze di navigazione influiscono sul significato e sul funzionamento, gli oggetti che possono ricevere il focus lo ricevono in un ordine che ne conserva il senso e l'operatività.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p></li>
+                            </ul>
+                            <h5>2.4.4 Scopo del collegamento (nel contesto)</h5>
+                            <h6>Descrizione</h6>
+                            <p>Lo scopo di ogni collegamento può essere determinato dal solo testo del collegamento oppure dal testo del collegamento insieme a dei contenuti contestuali che possono essere determinati programmaticamente, salvo il caso in cui lo scopo del collegamento potrebbe risultare ambiguo per la gran parte degli utenti.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di verifica accessibilità:</strong> <a href="https://www.achecker.ca/checker/index.php" target="_blank">AChecker</a> impostato sui criteri A, AA.</li>
+                                <li><strong>Tool per ispezionare il codice:</strong> Strumenti per sviluppatori di Google Chrome.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Alcuni collegamenti ipertestuali sono privi di attributo <code>title</code> oppure presentano delle immagini di riferimento senza attributo <code>alt</code>, rendendo difficile la navigazione alle persone con scarsa visibilità. Esempi elencati di seguito:</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;a href="#"&gt;&lt;/a&gt;</pre>
+                                        <pre>&lt;a href="/"&gt;&lt;img src="http://st.ilfattoquotidiano.it/wp-content/themes/ifq/assets/img/logo-header-na ...</pre>
+                                        <pre>&lt;a href="/video/"&gt;TV&lt;/a&gt;</pre>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>La pagina presenta le stesse problematiche della homepage visti qui precedentemente.</p></li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Aggiungere l'attributo <code>title</code> nei link ipertestuali e, nel caso si usassero delle immagini di riferimento, aggiungere degli attributi <code>alt</code>.</p>
+                            <h5>2.4.5 Differenti modalità</h5>
+                            <h6>Descrizione</h6>
+                            <p>Rendere disponibile più di una modalità per identificare una pagina Web all'interno di un insieme di pagine Web, salvo il caso in cui una pagina Web sia il risultato, o una fase, o di un'azione.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di verifica accessibilità:</strong> <a href="https://www.achecker.ca/checker/index.php" target="_blank">AChecker</a> impostato sui criteri A, AA.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <p>Il sito è privo di sitemap.</p>
+                            <h6>Soluzioni</h6>
+                            <p>Aggiungere o creare un sitemap per sito.</p>
+                            <h5>2.4.6 Intestazioni ed etichette</h5>
+                            <h6>Descrizione</h6>
+                            <p>Utilizzare intestazioni ed etichette per descrivere argomenti o finalità.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <ul>
+                                <li><strong>Tool di verifica accessibilità:</strong> <a href="https://www.achecker.ca/checker/index.php" target="_blank">AChecker</a> impostato sui criteri A, AA.</li>
+                            </ul>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Se vengono utilizzati degli <code>header</code>, gli <code>header</code> seguenti devono essere dello stesso livello o di livello inferiore.</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;h2&gt;Titolo&lt;/h2&gt;
+&lt;h1&gt;Formattazione scorretta&lt;/h1&gt;</pre>
+                                    </div>
+                                </div>
+                                </li>
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Gli <code>header</code> devono essere utilizzati per formattare il testo.</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;h2 class="title-category"&gt;&lt;a href ="#"&gt;&lt;/a&gt;&lt;/h2&gt;</pre>
+                                    </div>
+                                </div>
+                                </li>
+                            </ul>
+                            <h6>Soluzioni</h6>
+                            <p>Si dovrebbero utilizzare gli <code>header</code> in ordine di importanza, come segue:</p>
+                            <div class="card">
+                                    <div class="card-block">
+                                        <pre>&lt;h1&gt;Titolo&lt;/h1&gt;
+&lt;h1&gt;Formattazione corretta&lt;/h1&gt;
+&lt;h2&gt;Formattazione corretta&lt;/h2&gt;</pre>
+                                    </div>
+                                </div>
+                            <h5>2.4.7 Focus visibile</h5>
+                            <h6>Descrizione</h6>
+                            <p>Qualsiasi interfaccia utente utilizzabile tramite tastiera ha una funzionalità operativa in cui è visibile l'indicatore del focus.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nessun problema riscontrato.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/corea-del-nord/" target="_blank">www.ilfattoquotidiano.it/tag/corea-del-nord/</a>
+                                <p>Nessun problema riscontrato.</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/focus-border.png" class="figure-img img-fluid rounded" alt="focus del logo del sito">
+                                            <figcaption class="figure-caption bg-faded">Logo del sito sotto focus.</figcaption>
+                                        </figure>
+                                        <p class="card-text">Tutte le sezioni della barra di navigazione in alto possono essere marcate tramite il tasto <em>tab</em> della tastiera.</p>
+                                    </div>
+                                </div>
+                                </li>
+                            </ul>
                             <hr>
 
                             <!-- ============= COMPRENSiBILITA' ============= -->
@@ -234,15 +768,47 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>L'intera pagina è impostata in lingua italiana e non è possibile modificare questo settaggio.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>L'intera pagina è impostata in lingua italiana e non è possibile modificare questo settaggio.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>3.1.2 Parti in lingua</h5>
                             <h6>Descrizione</h6>
-                            <p>La lingua di ogni passaggio o frase può essere determinata programmaticamente, ad eccezione di nomi propri, termini tecnici, parole in lingue indeterminate o parole diventate parte integrante del gergo del testo circostante</p>
+                            <p>La lingua di ogni passaggio o frase può essere determinata programmaticamente, ad eccezione di nomi propri, termini tecnici, parole in lingue indeterminate o parole diventate parte integrante del gergo del testo circostante.</p>
                             <h6>Classificazione</h6>
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
-                            <h6>Soluzioni</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nell'immagine sottostante è riportato un esempio di un titolo di un articolo presente nella homepage dove è stata utilizzata la parola "stalker". Questo termine si è molto diffuso ed è entrato ormai nel nostro vocabolario nonostante sia di origine anglosassone.</p></li>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/english-text.png" class="figure-img img-fluid rounded" alt="parola in inglese">
+                                            <figcaption class="figure-caption bg-faded">Termine inglese all'interno di testo in italiano.</figcaption>
+                                        </figure>
+                                        <p class="card-text">Tutte le sezioni della barra di navigazione in alto possono essere marcate tramite il tasto <em>tab</em> della tastiera.</p>
+                                    </div>
+                                </div>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Nell'immagine sottostante è riportato del testo contenente acronimi e nomi propri.</p>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/names.png" class="figure-img img-fluid rounded" alt="nomi propri">
+                                            <figcaption class="figure-caption bg-faded">Nomi propri.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                </li>
+                            </ul>
                             <!-- ** 3.2 ++ -->
                             <h4>3.2 - Prevedibilità</h4>
                             <p>Creare pagine Web che appaiano e siano prevedibili.</p>
@@ -253,6 +819,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Se un elemento della pagina riceve il focus non c'è alcun cabiamento automatico di contesto.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Se un elemento della pagina riceve il focus non c'è alcun cabiamento automatico di contesto.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>3.2.2 All'input</h5>
                             <h6>Descrizione</h6>
@@ -261,6 +835,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Non ci sono impostazioni dell'interfaccia che possono essere cambiati.</p></li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Non ci sono impostazioni dell'interfaccia che possono essere cambiati.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>3.2.3 Navigazione coerente.</h5>
                             <h6>Descrizione</h6>
@@ -269,7 +851,24 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Nella home page è presente un secondo menu posto nell'header che però non viene riportato nelle altre pagine (immagine sottostante).</p></li>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/header.png" class="figure-img img-fluid rounded" alt="menu dell'header">
+                                            <figcaption class="figure-caption bg-faded">Menu dell'header.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Il menu laterale del sito rimane costante e inalterato su tutte le pagine analizzate e sui vari articoli contenuti nelle pagine. </p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
+                            <p>Il menu presente nell'header poteva essere riportato su tutte le altre pagine in modo da essere accessibile da qualunque pagina del sito, senza obbligatoriamente tornare alla home.</p>
                             <h5>3.2.4 Identificazione coerente.</h5>
                             <h6>Descrizione</h6>
                             <p>I componenti che hanno la stessa funzionalità all'interno di un insieme di pagine Web sono identificati in modo univoco.</p>
@@ -277,6 +876,30 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                <p>Tutti gli articoli presenti nella home page sono caratterizzati da titoli con testo in grassetto rosso e nero.</p></li>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/articolo-home.png" class="figure-img img-fluid rounded" alt="titolo di articolo nella home">
+                                            <figcaption class="figure-caption bg-faded">Titolo di un articolo.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Gli articoli nelle pagine della sezione "Temi del giorno" hanno tutto il titolo in grassetto e nero.</p>
+                                </li>
+                                <div class="card">
+                                    <div class="card-block">
+                                        <figure class="figure card-block">
+                                            <img src="images/articolo-tag.png" class="figure-img img-fluid rounded" alt="titolo di articolo in temi del giorno">
+                                            <figcaption class="figure-caption bg-faded">Titolo di un articolo.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <!-- ** 3.3 ++ -->
                             <h4>3.3 - Assistenza all'inserimento</h4>
@@ -288,7 +911,16 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                </li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Provando ad inserire testo non corretto (maturita anzichè maturità) nel motore di ricerca interno al sito non avviene alcuna correzione e non vengono trovati risultati rispetto alla ricerca effettuata.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
+                            <p>Utilizzando una funzione di confronto tra il testo inserito e un database (vocabolario) sarebbe possibile avvertire l'utente che il testo non è corretto.</p>
                             <h5>3.3.2 Etichette o istruzioni</h5>
                             <h6>Descrizione</h6>
                             <p>Fornire etichette o istruzioni quando il contenuto richiede azioni di input da parte dell'utente.</p>
@@ -296,6 +928,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                </li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Ad esclusione del modulo di login, dove sono presenti etichette per comunicare all'utente cosa inserire nei vari campi, nelle pagine analizzate non sono presenti altre richieste di input.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>3.3.3 Suggerimenti per gli errori</h5>
                             <h6>Descrizione</h6>
@@ -304,14 +944,31 @@
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                </li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Nelle pagine analizzate non è presente una correzione degli errori.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
+                            <p>Come suggerito in precedenza potrebbe bastare un confronto del testo inserito con un database per poter correggere immediatamente l'errore.</p>
                             <h5>3.3.4 Prevenzione degli errori</h5>
                             <h6>Descrizione</h6>
-                            <p>Per le pagine Web che contengono vincoli di tipo giuridico o finanziario o che gestiscono inserimento, cancellazione, gestione di dati controllabili dall'utente in un sistema di archiviazione oppure che inoltrano delle risposte di utenti a test, è soddisfatta almeno una delle seguenti condizioni:</p><ul><li><b>Reversibilit&agrave;</b>: le azioni sono reversibili</li><li><b>Controllo</b>: i dati inseriti dall'utente sono verificati e si fornisce all'utente la possibilit&agrave; di correggere eventuali errori di inserimento.</li><li><b>Conferma</b>: &egrave; disponibile una funzionalit&agrave; per la revisione, conferma e correzione delle informazioni prima del loro invio definitivo.</li></ul>
+                            <p>Per le pagine Web che contengono vincoli di tipo giuridico o finanziario o che gestiscono inserimento, cancellazione, gestione di dati controllabili dall'utente in un sistema di archiviazione oppure che inoltrano delle risposte di utenti a test, è soddisfatta almeno una delle seguenti condizioni:</p><ul><li><strong>Reversibilit&agrave;</strong>: le azioni sono reversibili</li><li><strong>Controllo</strong>: i dati inseriti dall'utente sono verificati e si fornisce all'utente la possibilit&agrave; di correggere eventuali errori di inserimento.</li><li><strong>Conferma</strong>: &egrave; disponibile una funzionalit&agrave; per la revisione, conferma e correzione delle informazioni prima del loro invio definitivo.</li></ul>
                             <h6>Classificazione</h6>
                             <p><span class="badge badge-default">Livello AA</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                </li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Nelle pagine analizzate non sono presenti vincoli giuridici o finanziari  o riguardanti dati controllabili dagli utenti.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <hr>
 
@@ -329,6 +986,14 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+                            <ul>
+                                <li><strong>Pagina Home:</strong> <a href="http://www.ilfattoquotidiano.it" target="_blank">www.ilfattoquotidiano.it</a>
+                                </li>
+
+                                <li><strong>Pagina Tag:</strong> <a href="http://www.ilfattoquotidiano.it/tag/maturita-2017/" target="_blank">www.ilfattoquotidiano.it/tag/maturita-2017/</a>
+                                <p>Le pagine sono state analizzate tramite <a href="http://wave.webaim.org/" target="_blank">wave.webaim.org</a> e non sono stati messi in luce problemi riguardanti attributi dupplicati e ID non unici.</p>
+                                </li>
+                            </ul>
                             <h6>Soluzioni</h6>
                             <h5>4.1.2 Nome, ruolo, valore</h5>
                             <h6>Descrizione</h6>
@@ -337,6 +1002,7 @@
                             <p><span class="badge badge-default">Livello A</span></p>
                             <h6>Strumenti usati</h6>
                             <h6>Analisi</h6>
+
                             <h6>Soluzioni</h6>
                         </div>
                     </div>
@@ -376,5 +1042,6 @@
         <script src="js/jquery-3.2.1.slim.min.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/offcanvas.js"></script>
     </body>
 </html>
