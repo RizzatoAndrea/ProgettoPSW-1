@@ -418,16 +418,17 @@
 
                             <hr>
                             <!-- ============= CASO TRE ============= -->
-                            <h3 id="caso3">3. Cercare notizie sportive</h3>
+                            <h3 id="caso3">3. Cerca notizie per una data specifica</h3>
                             <h4>Dettagli</h4>
-                            <p>Cercare notizie pubblicate o riguardanti una singola data. </p><p>L'utente, partendo da una pagina qualsiasi del sito, sarà invitato a cercare tutte le notizie riguardanti una data specifica fissata dal tester. Per svolgere questo caso d'uso l'utente dovrà utilizzare la lente di ingrandimento presente nel sito, che indica un motore di ricerca interno al sito.</p>
+                            <p>Cercare notizie pubblicate o riguardanti una singola data. </p><p>L'utente, partendo da una pagina qualsiasi del sito, sarà invitato a cercare tutte le notizie riguardanti una data specifica fissata dal tester. Per svolgere questo caso d'uso l'utente dovrà utilizzare la lente d'ingrandimento presente nel sito, che indica un motore di ricerca interno al sito.</p>
                             <h4>Analisi</h4>
                             <h5>Sequenza delle azioni svolte dagli attori e dal sistema:</h5>
                             <p>Di seguito sono elencate le azioni più comuni che sono state svolte dagli attori.</p>
                             <ul>
                                 <li>
-                                <p><strong>Descrizione del percorso (1):</strong> l'utente utilizza immediatamente la ricerca interna al sito per inserire la data e quindi raggiungere l'obiettivo. Gli utenti meno esperti cliccano nuovamente sulla lente d'ingrandimento per avviare la ricerca, ma questo non avvia la ricerca e anzi chiude il campo, con conseguente disappunto da parte dell'utente. Solo a un terzo tentativo l'utente andrà ad utilizzare il tasto <code>invio</code> della tastiera. La ricerca però non va a buon fine, i risultati riportati sono sempre notizie con data a partire da marzo 2017 e vanno a ritroso.</p>
+                                <p><strong>Descrizione del percorso (1):</strong> l'utente utilizza immediatamente la ricerca interna al sito per inserire la data e quindi per raggiungere l'obiettivo. Gli utenti meno esperti cliccano nuovamente sulla lente d'ingrandimento per avviare la ricerca, ma questo non avvia la ricerca e anzi chiude il campo, con conseguente disappunto da parte dell'utente. Solo a un terzo tentativo l'utente andrà ad utilizzare il tasto <code>invio</code> della tastiera. La ricerca però non va a buon fine, i risultati riportati sono sempre notizie con data a partire da marzo 2017 e vanno a ritroso.</p>
                                 <div class="card">
+                                    <div class="card-header">Barra di Ricerca.</div>
                                     <figure class="figure card-block">
                                         <img src="images/11-settembre-2001.png" class="figure-img img-fluid rounded" alt="ricerca data 11 settembre 2001">
                                         <figcaption class="figure-caption bg-faded">Barra di ricerca con query "11 settembre 2001"</figcaption>
@@ -435,6 +436,7 @@
                                 </div>
                                 <p><strong>Raggiungimento obiettivo:</strong> <span class="badge badge-danger">Non raggiunto</span></p>
                                 </li>
+                                <!--
                                 <li>
                                  <p><strong>Descrizione del percorso:</strong> </p>
                                 <p><strong>Raggiungimento obiettivo:</strong> <span class="badge badge-success">Raggiunto</span> <span class="badge badge-danger">Non raggiunto</span></p>
@@ -447,23 +449,27 @@
                                  <p><strong>Descrizione del percorso:</strong> </p>
                                 <p><strong>Raggiungimento obiettivo:</strong> <span class="badge badge-success">Raggiunto</span> <span class="badge badge-danger">Non raggiunto</span></p>
                                 </li>
+                                -->
                             </ul>
                             <h6>Mobile</h6>
                             <ul>
                                 <li>
-                                <p><strong>Descrizione del percorso (1):</strong> l'utente cerca il campo di ricerca che su desktop era contraddistinto da una lente di ingrandimento ma non lo trova, per cui rinuncia alla ricerca.</p>
+                                <p><strong>Descrizione del percorso (2):</strong> l'utente cerca il campo di ricerca che su desktop era contraddistinto da una lente di ingrandimento ma non lo trova, per cui rinuncia alla ricerca.</p>
                                     <div class="card">
+                                        <div class="card-header">Barra di ricerca in mobile.</div>
                                     <figure class="figure card-block">
                                         <img src="images/ricerca-mobile.png" class="figure-img img-fluid rounded" alt="screenshot della ricerca mobile">
                                         <figcaption class="figure-caption bg-faded">Screenshot che mostra l'assenza di una barra di ricerca nel sito mobile.</figcaption>
                                     </figure>
                                 </div>
-                                <p><strong>Raggiungimento obiettivo:</strong><span class="badge badge-danger">Non raggiunto</span></p>
+                                <p><strong>Raggiungimento obiettivo:</strong> <span class="badge badge-danger">Non raggiunto</span></p>
                                 </li>
+                                <!--
                                 <li>
                                  <p><strong>Descrizione del percorso:</strong> </p>
                                 <p><strong>Raggiungimento obiettivo:</strong> <span class="badge badge-success">Raggiunto</span> <span class="badge badge-danger">Non raggiunto</span></p>
                                 </li>
+                                -->
                             </ul>
                             <h5>Eventuali eccezioni e come devono essere gestite:</h5>
                             <p>Di seguito sono elencate tutte le eccezioni che sono state individuate dagli utenti testati.</p>
@@ -478,6 +484,7 @@
                                     <p><strong>Gravità:</strong><span class="badge badge-danger">Critico</span></p>
                                 <p><strong>Possibile soluzione:</strong> migliorare il motore di ricerca interno al sito.</p>
                                 </li>
+                                <!--
                                 <li>
                                 <p><strong>Eccezione:</strong> descrivere l'eccezione.</p>
                                     <p><strong>Gravità:</strong> <span class="badge badge-default">Minore</span> <span class="badge badge-warning">Importante</span> <span class="badge badge-danger">Critico</span></p>
@@ -488,6 +495,7 @@
                                     <p><strong>Gravità:</strong> <span class="badge badge-default">Minore</span><span class="badge badge-warning">Importante</span><span class="badge badge-danger">Critico</span></p>
                                 <p><strong>Possibile soluzione:</strong> descrizione soluzione.</p>
                                 </li>
+                            -->
                             </ul>
                             <h6>Mobile</h6>
                             <ul>
@@ -496,6 +504,7 @@
                                     <p><strong>Gravità:</strong> <span class="badge badge-danger">Critico</span></p>
                                 <p><strong>Possibile soluzione:</strong> permettere all'utente di usare la ricerca interna al sito anche da mobile.</p>
                                 </li>
+                                <!--
                                 <li>
                                 <p><strong>Eccezione:</strong> descrivere l'eccezione.</p>
                                     <p><strong>Gravità:</strong> <span class="badge badge-default">Minore</span> <span class="badge badge-warning">Importante</span><span class="badge badge-danger">Critico</span></p>
@@ -511,6 +520,7 @@
                                     <p><strong>Gravità:</strong> <span class="badge badge-default">Minore</span><span class="badge badge-warning">Importante</span> <span class="badge badge-danger">Critico</span></p>
                                 <p><strong>Possibile soluzione:</strong> descrizione soluzione.</p>
                                 </li>
+                            -->
                             </ul>
                             <h4>Conclusioni</h4>
 
