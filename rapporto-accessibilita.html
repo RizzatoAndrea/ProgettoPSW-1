@@ -72,10 +72,17 @@
                         <div class="col-12">
                             <h2>Dettagli</h2>
                             <h4>Autori</h4>
+                                <p>Andrea Miotto</p>
+                                <p>Andrea Rizzato</p>
+                                <p>Marco Tonet</p>
                             <h4>Data di Stesura del Rapporto</h4>
+                                <p>20 Giugno 2017</p>
                             <h4>Metodo Seguito</h4>
+                                <p>Per valutare l'accessibilità del sito è stato inizialmente utilizzato il validatore online del W3C, successivamente è stato utilizzato il sito <a href="http://wave.webaim.org//" title="Link al validatore Webaim">webaim</a> dove vengono messi in luce i vari punti critici per l'accessibilità. Infine è stata controllata la possibilità di navigare l'intero sito tramite tastiera e la conformitàcon le WCAG</p>
                             <h4>Perimetro dell'Indagine</h4>
+                                <p>E' stata analizzata l'acessibilità del sito <a href="http://www.ilfattoquotidiano.it/" title="Link al sito Il Fatto Quotidiano">Il Fatto Quotidiano</a></p>
                             <h4>Linee Guida</h4>
+                                <p>???????</p>
                         </div>
                     </div>
                     <hr>
@@ -92,7 +99,7 @@
                             <p>Fornire alternative testuali per qualsiasi contenuto non di testo in modo che questo possa essere trasformato in altre forme fruibili secondo le necessità degli utenti come stampa a caratteri ingranditi, Braille, sintesi vocale, simboli o un linguaggio più semplice.</p>
                             <h5>1.1.1 Contenuti non testuali</h5>
                             <h6>Descrizione</h6>
-                            <P>Tutti i contenuti non testuali presentati all'utente hanno un'alternativa testuale equivalente che serve allo stesso scopo, ad eccezione delle seguenti situazioni</P>
+                            <p>Tutti i contenuti non testuali presentati all'utente hanno un'alternativa testuale equivalente che serve allo stesso scopo, ad eccezione delle seguenti situazioni</p>
                             <ul>
                                 <li><strong>Controlli, input:</strong> Se il contenuto non testuale è un controllo o accetta l'input degli utenti, allora ha un nome che ne descrive la finalità. (Riferirsi alla Linea guida 4.1 per i requisiti supplementari richiesti per controlli e contenuto che accettano l'input da parte dell'utente).</li>
                                 <li><strong>Tipi di media temporizzati:</strong> Se il contenuto non testuale è un tipo di media temporizzato, allora le alternative testuali forniscono almeno una identificazione descrittiva per il contenuto non testuale. (Riferirsi alla Linea guida 1.2 per ulteriori requisiti per i tipi di media).</li>
@@ -746,13 +753,125 @@ e.preventDefault();
                                 </li>
                             </ul>
                             <hr>
+
+                            <!-- ============= COMPRENSiBILITA' ============= -->
+
                             <h3 id="comprensibilita">3 - Comprensibilità</h3>
-                            <h4>3.1 - Comprensibilità e leggibilità del testo</h4>
-                            <h4>3.2 - Prevedibilità azioni</h4>
-                            <h4>3.3 - Previsione e gestione errori utente</h4>
+                                <p>Le informazioni e le operazioni che si possono compiere nell'interfaccia utente devono essere intuitive e semplici da comprendere da parte dell'utente.</p>
+                            <!-- ** 3.1 ++ -->
+                            <h4>3.1 - Leggibilità </h4>
+                            <p>Rendere il testo leggibile e comprensibile.</p>
+                            <h5>3.1.1 Linguaggio della Pagina</h5>
+                            <h6>Descrizione</h6>
+                            <p>L'impostazione della lingua predefinita di ogni pagina può essere determinata programmaticamente.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.1.2 Parti in lingua</h5>
+                            <h6>Descrizione</h6>
+                            <p>La lingua di ogni passaggio o frase può essere determinata programmaticamente, ad eccezione di nomi propri, termini tecnici, parole in lingue indeterminate o parole diventate parte integrante del gergo del testo circostante</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <!-- ** 3.2 ++ -->
+                            <h4>3.2 - Prevedibilità</h4>
+                            <p>Creare pagine Web che appaiano e siano prevedibili.</p>
+                            <h5>3.2.1 Al focus</h5>
+                            <h6>Descrizione</h6>
+                            <p>Se un componente riceve il focus non deve automaticamente avviare un cambiamento di contesto.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.2.2 All'input</h5>
+                            <h6>Descrizione</h6>
+                            <p>Cambiare l'impostazione di qualsiasi componente nell'interfaccia utente non provoca automaticamente un cambiamento di contesto, a meno che l'utente sia stato informato del comportamento prima di utilizzare il componente.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.2.3 Navigazione coerente.</h5>
+                            <h6>Descrizione</h6>
+                            <p>I meccanismi di navigazione ripetuti su più pagine Web all'interno di un insieme di pagine Web, devono apparire nello stesso ordine corrispondente ogni volta che si ripetono, a meno che un cambiamento sia stato avviato da un utente.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.2.4 Identificazione coerente.</h5>
+                            <h6>Descrizione</h6>
+                            <p>I componenti che hanno la stessa funzionalità all'interno di un insieme di pagine Web sono identificati in modo univoco.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <!-- ** 3.3 ++ -->
+                            <h4>3.3 - Assistenza all'inserimento</h4>
+                            <p>Aiutare gli utenti ad evitare gli errori ed agevolarli nella loro correzione.</p>
+                            <h5>3.3.1 Identificazione di errori</h5>
+                            <h6>Descrizione</h6>
+                            <p>Se viene rilevato automaticamente un errore di inserimento, l'elemento in errore viene identificato e descritto tramite testo.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.3.2 Etichette o istruzioni</h5>
+                            <h6>Descrizione</h6>
+                            <p>Fornire etichette o istruzioni quando il contenuto richiede azioni di input da parte dell'utente.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.3.3 Suggerimenti per gli errori</h5>
+                            <h6>Descrizione</h6>
+                            <p>Se viene identificato un errore di inserimento che si può correggere, è necessario fornire suggerimenti all'utente, a meno che ciò non pregiudichi la sicurezza o la finalità del contenuto.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>3.3.4 Prevenzione degli errori</h5>
+                            <h6>Descrizione</h6>
+                            <p>Per le pagine Web che contengono vincoli di tipo giuridico o finanziario o che gestiscono inserimento, cancellazione, gestione di dati controllabili dall'utente in un sistema di archiviazione oppure che inoltrano delle risposte di utenti a test, è soddisfatta almeno una delle seguenti condizioni:</p><ul><li><b>Reversibilit&agrave;</b>: le azioni sono reversibili</li><li><b>Controllo</b>: i dati inseriti dall'utente sono verificati e si fornisce all'utente la possibilit&agrave; di correggere eventuali errori di inserimento.</li><li><b>Conferma</b>: &egrave; disponibile una funzionalit&agrave; per la revisione, conferma e correzione delle informazioni prima del loro invio definitivo.</li></ul>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello AA</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
                             <hr>
+
+                            <!-- ============= ROBUSTEZZA' ============= -->
+
                             <h3 id="robustezza">4 - Robustezza</h3>
-                            <h4>4.1 - Compatibilità con attuali e future tecnologie</h4>
+                            <p>Il contenuto deve essere abbastanza robusto per essere interpretato in maniera affidabile mediante una vasta gamma di programmi utente, comprese le tecnologie assistive.</p>
+                            <h4>4.1 - Compatibilità</h4>
+                            <p>Garantire la massima compatibilità con i programmi utente attuali e futuri, comprese le tecnologie assistive.</p>
+                            <!-- ** 4.1 ++ -->
+                            <h5>4.1.1 Linguaggio della Pagina</h5>
+                            <h6>Descrizione</h6>
+                            <p>Nel contenuto implementato utilizzando linguaggi di marcatura gli elementi possiedono tag di apertura e chiusura completi, sono annidati in conformità alle proprie specifiche, non contengono attributi duplicati e tutti gli ID sono unici, salvo il caso in cui le specifiche permettano eccezioni.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
+                            <h5>4.1.2 Nome, ruolo, valore</h5>
+                            <h6>Descrizione</h6>
+                            <p>Per tutti i componenti dell'interfaccia utente nome e ruolo devono essere determinati programmaticamente; stati, proprietà e valori che possono essere impostati dall'utente devono essere impostabili da programma; e le notifiche sui cambi di stato di questi elementi devono essere rese disponibili ai programmi utente, incluse le tecnologie assistive.</p>
+                            <h6>Classificazione</h6>
+                            <p><span class="badge badge-default">Livello A</span></p>
+                            <h6>Strumenti usati</h6>
+                            <h6>Analisi</h6>
+                            <h6>Soluzioni</h6>
                         </div>
                     </div>
 
