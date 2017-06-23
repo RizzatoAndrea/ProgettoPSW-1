@@ -106,3 +106,10 @@ h2 {
   }
 }
 
+
+@media print{  /*Regola dedicata alla visualizzazione su carta*/
+    .sidebar-offcanvas {
+        display: none !important;
+    }
+}
+
